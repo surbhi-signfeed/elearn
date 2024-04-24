@@ -3,6 +3,7 @@
 	"version": "1.4.0",
 	"private": true,
 	"scripts": {
+		"install": "npm install --f",
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
