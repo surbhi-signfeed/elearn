@@ -44,8 +44,6 @@ const handlePut = async (req, res) => {
 					instructor_subject,
 					instructor_description,
 					phone,
-					//done by me
-					instructor_request_confirmed:false
 				},
 				{ where: { id: userId } }
 			);

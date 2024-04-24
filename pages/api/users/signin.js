@@ -43,16 +43,14 @@ const userSignin = async (req, res) => {
 			});
 		}
 
-		// if (!user.status) {
-		// 	return res.status(404).json({
-		// 		message:
-		// 			"This account is temporarily disabled, please contact the support email",
-		// 	});
-		// }
+		if (!user.status) {
+			return res.status(404).json({
+				message:
+					"This account is temporarily disabled, please contact the support email",
+			});
+		}
 
 		const passwordsMatch = await bcrypt.compare(password, user.password);
-		
-		// const passwordsMatch = await  user.password
 		if (passwordsMatch) {
 			const elarniv_users_token = jwt.sign(
 				{
